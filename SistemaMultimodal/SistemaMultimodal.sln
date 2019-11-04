@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29326.143
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01-Data", "01-Data", "{34A056BC-0BF3-41B9-908A-5FBC0295D024}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "02-Application", "02-Application", "{DB90FF17-45A4-4579-A3AB-DE10671EF64D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "03-Presentacion", "03-Presentacion", "{4407DF67-5B0E-4935-82D2-0E57C63EAD9B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ControlTrafico.Application.Services", "ControlTrafico.Application.Services\ControlTrafico.Application.Services.csproj", "{D81A827A-51A4-490A-A848-3BC73C66099C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ControlTrafico.Application.DTO", "ControlTrafico.Application.DTO\ControlTrafico.Application.DTO.csproj", "{7E729BA1-7365-417F-8BB5-07D2C5520AED}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ControlTrafico.Data", "ControlTrafico.Data\ControlTrafico.Data.csproj", "{AD8053F1-FA7E-4F4B-89CE-616ABDB09573}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ControlTrafico.Data.Domain", "ControlTrafico.Data.Domain\ControlTrafico.Data.Domain.csproj", "{91909F8A-14D1-4F08-97C6-35B6CF66E955}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D81A827A-51A4-490A-A848-3BC73C66099C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D81A827A-51A4-490A-A848-3BC73C66099C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D81A827A-51A4-490A-A848-3BC73C66099C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D81A827A-51A4-490A-A848-3BC73C66099C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7E729BA1-7365-417F-8BB5-07D2C5520AED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7E729BA1-7365-417F-8BB5-07D2C5520AED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7E729BA1-7365-417F-8BB5-07D2C5520AED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7E729BA1-7365-417F-8BB5-07D2C5520AED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AD8053F1-FA7E-4F4B-89CE-616ABDB09573}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AD8053F1-FA7E-4F4B-89CE-616ABDB09573}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AD8053F1-FA7E-4F4B-89CE-616ABDB09573}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AD8053F1-FA7E-4F4B-89CE-616ABDB09573}.Release|Any CPU.Build.0 = Release|Any CPU
+		{91909F8A-14D1-4F08-97C6-35B6CF66E955}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{91909F8A-14D1-4F08-97C6-35B6CF66E955}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{91909F8A-14D1-4F08-97C6-35B6CF66E955}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{91909F8A-14D1-4F08-97C6-35B6CF66E955}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{D81A827A-51A4-490A-A848-3BC73C66099C} = {DB90FF17-45A4-4579-A3AB-DE10671EF64D}
+		{7E729BA1-7365-417F-8BB5-07D2C5520AED} = {DB90FF17-45A4-4579-A3AB-DE10671EF64D}
+		{AD8053F1-FA7E-4F4B-89CE-616ABDB09573} = {34A056BC-0BF3-41B9-908A-5FBC0295D024}
+		{91909F8A-14D1-4F08-97C6-35B6CF66E955} = {34A056BC-0BF3-41B9-908A-5FBC0295D024}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2BE50D5C-82AE-4981-9CDE-9018DB6D437A}
+	EndGlobalSection
+EndGlobal
