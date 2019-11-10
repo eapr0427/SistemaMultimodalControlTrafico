@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ControlTrafico.Application.DTO;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +7,8 @@ using System.Threading.Tasks;
 
 namespace ControlTrafico.Application.Services
 {
-    public class Class1
+    public interface IFlujoService
     {
+        Task<IEnumerable<FlujoDto>> GetFlujos();
     }
 }
