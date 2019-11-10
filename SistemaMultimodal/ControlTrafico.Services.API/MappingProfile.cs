@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using ControlTrafico.Application.DTO;
 using ControlTrafico.Data.Domain;
+using ControlTrafico.Data.Domain.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;

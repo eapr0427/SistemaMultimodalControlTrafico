@@ -4,10 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using ControlTrafico.Data;
+using ControlTrafico.Data.Domain.Entities;
 
 namespace ControlTrafico.Data.Domain.Repositories
 {
-    public interface IFlujoRepository : IRepository<Flujo, Guid>
+    public interface IFlujoRepository : IRepository<Prueba, long>
     {
     }
 }

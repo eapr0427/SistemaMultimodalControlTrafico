@@ -17,7 +17,7 @@ namespace ControlTrafico.Data.EF.Core
 
         public void Dispose()
         {
-            throw new NotImplementedException();
+            _unitOfWork?.Dispose();
         }
 
         public IEnumerable<TEntity> GetAll()
