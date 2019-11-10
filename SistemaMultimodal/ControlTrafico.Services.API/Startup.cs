@@ -9,6 +9,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.OpenApi.Models;
 using Swashbuckle.AspNetCore.Swagger;
 
 namespace ControlTrafico.Services.API
@@ -25,25 +26,24 @@ namespace ControlTrafico.Services.API
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            ////Register Swagger Generator
-            //services.AddSwaggerGen(mm =>
-            //{
-            //    mm.SwaggerDoc("v1", new Info
-            //    {
-            //        Title = "Sistema de Control de Tráfico",
-            //        Version = "v1",
-            //        Description = "Arquitectura de Software - Sistema Multimodal"
-            //        //Contact = new InfoContact
-            //        //{
-            //        //    Name = "Globant",
-            //        //    Email = string.Empty,
-            //        //    Url = new Uri("https://www.globant.com")
-            //        //}
-            //    });
+            //Register Swagger Generator
+            services.AddSwaggerGen(mm =>
+            {
+                mm.SwaggerDoc("v1", new OpenApiInfo
+                {
+                    Title = "Sistema de Control de Tráfico",
+                    Version = "v1",
+                    Description = "Arquitectura de Software - Sistema Multimodal"
+                    //Contact = new InfoContact
+                    //{
+                    //    Name = "Poli",
+                    //    Email = string.Empty,
+                    //    Url = new Uri("https://www.globant.com")
+                    //}
+                });
 
-            //});
+            });
 
-            //services.mapper(typeof(Startup));
             InitDbContext(services);
             RegisterRepositories(services);
             RegisterServices(services);
@@ -63,10 +63,19 @@ namespace ControlTrafico.Services.API
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+            // Enable middleware to serve generated Swagger as a JSON endpoint.
+            app.UseSwagger();
             //if (env.IsDevelopment())
             //{
             //    app.UseDeveloperExceptionPage();
             //}
+
+            // Enable middleware to serve swagger-ui (HTML, JS, CSS, etc.),
+            // specifying the Swagger JSON endpoint.
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Control Tráfico API - Dream Team V1");
+            });
 
             app.UseHttpsRedirection();
 
@@ -99,7 +108,6 @@ namespace ControlTrafico.Services.API
 
         //    app.UseMvc();
         //}
-
         private void InitDbContext(IServiceCollection services)
         {
             services.AddDbContext<UnitOfWork>(opts =>
