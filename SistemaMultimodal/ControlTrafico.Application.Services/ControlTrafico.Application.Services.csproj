@@ -31,6 +31,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AutoMapper, Version=9.0.0.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.9.0.0\lib\net461\AutoMapper.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -54,6 +57,13 @@
       <Project>{91909F8A-14D1-4F08-97C6-35B6CF66E955}</Project>
       <Name>ControlTrafico.Data.Domain</Name>
     </ProjectReference>
+    <ProjectReference Include="..\ControlTrafico.Data\ControlTrafico.Data.csproj">
+      <Project>{AD8053F1-FA7E-4F4B-89CE-616ABDB09573}</Project>
+      <Name>ControlTrafico.Data</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
