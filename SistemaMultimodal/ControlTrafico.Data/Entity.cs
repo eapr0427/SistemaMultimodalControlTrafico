@@ -6,8 +6,8 @@ namespace ControlTrafico.Data
 {
     public abstract class Entity
     {
-        public virtual DateTime FechaCrecion { get; set; }
-        public virtual DateTime FechaModificacion { get; set; }
+        //public virtual DateTime FechaCrecion { get; set; }
+        //public virtual DateTime FechaModificacion { get; set; }
 
     }
 
@@ -17,10 +17,10 @@ namespace ControlTrafico.Data
 
         public virtual void UpdateFechaModificacion()
         {
-            if (this.FechaCrecion != default)
-            {
-                this.FechaModificacion = DateTime.UtcNow;
-            }
+            //if (this.FechaCrecion != default)
+            //{
+            //    this.FechaModificacion = DateTime.UtcNow;
+            //}
         }
     }
 }
