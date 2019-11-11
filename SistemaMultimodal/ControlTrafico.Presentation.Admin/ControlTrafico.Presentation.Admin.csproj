@@ -1,0 +1,30 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
+    <UserSecretsId>aspnet-ControlTrafico.Presentation.Admin-05B2CE87-F3BD-4A0F-94CC-548338719614</UserSecretsId>
+  </PropertyGroup>
+
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="9.0.0" />
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="7.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="3.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="3.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="3.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="3.0.0" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.0.0" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <ProjectReference Include="..\ControlTrafico.Application.DTO\ControlTrafico.Application.DTO.csproj" />
+    <ProjectReference Include="..\ControlTrafico.Application.Services\ControlTrafico.Application.Services.csproj" />
+    <ProjectReference Include="..\ControlTrafico.Data.Domain\ControlTrafico.Data.Domain.csproj" />
+    <ProjectReference Include="..\ControlTrafico.Data.EF.Core\ControlTrafico.Data.EF.Core.csproj" />
+    <ProjectReference Include="..\ControlTrafico.ExternalServices\ControlTrafico.ExternalServices.csproj" />
+  </ItemGroup>
+
+</Project>

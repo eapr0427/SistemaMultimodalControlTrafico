@@ -8,7 +8,7 @@ using ControlTrafico.Data.Domain.Entities;
 
 namespace ControlTrafico.Data.Domain.Repositories
 {
-    public interface IFlujoRepository : IRepository<Prueba, long>
+    public interface IFlujoRepository : IRepository<Flujo, long>
     {
     }
 }

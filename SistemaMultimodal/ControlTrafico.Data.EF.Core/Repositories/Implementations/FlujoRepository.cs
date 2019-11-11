@@ -7,7 +7,7 @@ using System.Text;
 
 namespace ControlTrafico.Data.EF.Core.Repositories.Implementations
 {
-    public class FlujoRepository : Repository<Prueba, long>, IFlujoRepository
+    public class FlujoRepository : Repository<Flujo, long>, IFlujoRepository
     {
         public FlujoRepository(UnitOfWork unitOfWork) : base(unitOfWork)
         {

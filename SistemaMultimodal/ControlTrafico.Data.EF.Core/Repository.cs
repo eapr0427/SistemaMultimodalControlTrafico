@@ -20,6 +20,18 @@ namespace ControlTrafico.Data.EF.Core
             _unitOfWork?.Dispose();
         }
 
+        public void Add(TEntity item)
+        {
+            GetSet().Add(item);
+            _unitOfWork.CommitChanges();
+        }
+
+        public async Task AddAsync(TEntity item)
+        {
+            await GetSet().AddAsync(item);
+            _unitOfWork.CommitChanges();
+        }
+
         public IEnumerable<TEntity> GetAll()
         {
             return GetSet().AsEnumerable();

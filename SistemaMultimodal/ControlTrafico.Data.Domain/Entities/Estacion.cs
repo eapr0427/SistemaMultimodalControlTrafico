@@ -10,7 +10,6 @@ namespace ControlTrafico.Data.Domain.Entities
     [Table("ESTACIONES")]
     public class Estacion : Entity<long>
     { 
-        public long id_estacion { get; set; }
         public string nombre { get; set; }
         public string estado { get; set; }
         public long id_estacion_infra { get; set; }

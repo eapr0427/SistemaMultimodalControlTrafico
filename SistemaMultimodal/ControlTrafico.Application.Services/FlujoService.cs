@@ -25,8 +25,8 @@ namespace ControlTrafico.Application.Services
             List<FlujoDto> flujoDtos = new List<FlujoDto>();
             foreach (var flujo in flujos)
             {
-                var fujoDTO = _mapper.Map<FlujoDto>(flujo);
-                flujoDtos.Add(fujoDTO);
+                var flujoDTO = _mapper.Map<FlujoDto>(flujo);
+                flujoDtos.Add(flujoDTO);
             }
             return flujoDtos;
         }

@@ -10,7 +10,7 @@ namespace ControlTrafico.ExternalServices.Services
     public class ApiService : IApiService
     {
 
-        public async Task<ResponseDto<EstacionesRootResponseDto>> GetEstaciones()
+        public async Task<ResponseDto<EstacionesRootResponseDto>> GetEstacionesAsync()
         {
             var instancia = new Servicio<EstacionesRootResponseDto>();
             ServicioRest payload = new ServicioRest

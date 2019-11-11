@@ -8,6 +8,8 @@ namespace ControlTrafico.Application.DTO
 {
     public class TipoEstacionResponseDTO
     {
+        public int Id { get; set; }
+
         public int IdTypeStation { get; set; }
         public string NameTypeStation { get; set; }
     }

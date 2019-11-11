@@ -50,6 +50,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Contracts\IEstacionService.cs" />
+    <Compile Include="EstacionService.cs" />
     <Compile Include="FlujoService.cs" />
     <Compile Include="IFlujoService.cs" />
     <Compile Include="IRutinaService.cs" />

@@ -8,6 +8,7 @@ namespace ControlTrafico.Application.DTO
 {
     public class ZonaEstacionResponseDTO
     {
+        public int Id { get; set; }
         public int IdZone { get; set; }
         public string NameZone { get; set; }
         public string DescriptionZone { get; set; }

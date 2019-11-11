@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,6 +9,8 @@ namespace ControlTrafico.Application.DTO
 {
     public class EstacionesRootResponseDto
     {
-        public List<EstacionesResponseDTO> listStation { get; set; }
+
+        [JsonProperty("listStation")]
+        public List<EstacionesResponseDTO> ListStation { get; set; }
     }
 }

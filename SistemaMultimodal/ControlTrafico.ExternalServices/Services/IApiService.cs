@@ -8,6 +8,6 @@ namespace ControlTrafico.ExternalServices.Services
 {
     public interface IApiService
     {
-        Task<ResponseDto<EstacionesRootResponseDto>> GetEstaciones();
+        Task<ResponseDto<EstacionesRootResponseDto>> GetEstacionesAsync();
     }
 }

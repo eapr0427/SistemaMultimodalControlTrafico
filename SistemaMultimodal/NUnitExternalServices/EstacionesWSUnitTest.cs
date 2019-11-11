@@ -19,7 +19,7 @@ namespace NUnitExternalServices
             try
             {
                 IApiService instance = CreateInstance();
-               estaciones = instance.GetEstaciones().Result;
+                estaciones = instance.GetEstacionesAsync().Result;
             }
             catch (System.Exception ex)
             {
