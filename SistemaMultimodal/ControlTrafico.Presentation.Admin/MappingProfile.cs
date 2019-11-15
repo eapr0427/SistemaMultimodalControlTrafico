@@ -13,6 +13,8 @@ namespace ControlTrafico.Presentation.Admin
         public MappingProfile()
         {
             CreateMap<Estacion, EstacionesResponseDTO>();
+            CreateMap<FlujoDto, Flujo>();
+            CreateMap<Flujo, FlujoDto>();
         }
     }
 }
