@@ -328,3 +328,7 @@ ASALocalRun/
 
 # MFractors (Xamarin productivity tool) working folder 
 .mfractor/
+/SistemaMultimodal/ControlTrafico.Application.Services.CORE
+/SistemaMultimodal/ControlTrafico.Application.Services.Test
+/SistemaMultimodal/ControlTrafico.Data.NetCore
+/SistemaMultimodal/ControlTrafico.Data.Domain.Core

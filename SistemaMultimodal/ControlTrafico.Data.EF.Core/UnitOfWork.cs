@@ -20,6 +20,7 @@ namespace ControlTrafico.Data.EF.Core
         }
 
         public DbSet<Flujo> Flujo { get; set; }
+        public DbSet<RutasDisponibles> RutasDisponibles { get; set; }
         public DbSet<Ruta> Ruta { get; set; }
         public DbSet<Estacion> Estacion { get; set; }
         public DbSet<EstacionRutas> EstacionRutas { get; set; }

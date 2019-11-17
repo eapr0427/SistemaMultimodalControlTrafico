@@ -10,5 +10,7 @@ namespace ControlTrafico.Data.Domain.Repositories
 {
     public interface IFlujoRepository : IRepository<Flujo, long>
     {
+        Task<List<Flujo>> GetFlujosAsync();
+
     }
 }

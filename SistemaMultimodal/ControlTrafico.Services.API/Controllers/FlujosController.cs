@@ -26,5 +26,11 @@ namespace ControlTrafico.Services.API.Controllers
             return await _flujosService.GetFlujos();
         }
 
+        //[HttpGet]
+        //public async Task<IEnumerable<FlujoDto>> GetRutasDisponibles()
+        //{
+        //    return await _flujosService.GetRutasDisponibles();
+        //}
+
     }
 }

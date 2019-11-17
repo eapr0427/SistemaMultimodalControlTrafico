@@ -7,9 +7,8 @@ using System.Threading.Tasks;
 
 namespace ControlTrafico.Application.Services
 {
-    public interface IFlujoService
+    public interface IRutaService
     {
-        Task<IEnumerable<FlujoDto>> GetFlujos();
-
+        Task<IEnumerable<RutaDisponibleDTO>> GetRutasDisponibles();
     }
 }

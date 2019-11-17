@@ -21,7 +21,7 @@ namespace ControlTrafico.Application.Services
         }
         public async Task<IEnumerable<FlujoDto>> GetFlujos()
         {
-            var flujos = await _flujoRepository.GetAllAsync();
+            var flujos = await _flujoRepository.GetFlujosAsync();
             List<FlujoDto> flujoDtos = new List<FlujoDto>();
             foreach (var flujo in flujos)
             {
@@ -30,5 +30,7 @@ namespace ControlTrafico.Application.Services
             }
             return flujoDtos;
         }
+
+
     }
 }

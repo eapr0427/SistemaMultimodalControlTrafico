@@ -121,12 +121,15 @@ namespace ControlTrafico.Presentation.Admin
             services.AddScoped<IApiService, ApiService>();
             services.AddScoped<IEstacionService, EstacionService>();
             services.AddScoped<IFlujoService, FlujoService>();
+            services.AddScoped<IRutaService, RutaService>();
         }
 
         private void RegisterRepositories(IServiceCollection services)
         {
             services.AddScoped<IEstacionRepository, EstacionRepository>();
             services.AddScoped<IFlujoRepository, FlujoRepository>();
+            services.AddScoped<IRutasRepository, RutaRepository>();
+
         }
         private void InitDbContext(IServiceCollection services)
         {

@@ -12,5 +12,8 @@ namespace ControlTrafico.Data.Domain.Entities
     {
         public long id_ruta { get; set; }
         public System.DateTime fecha_hora_envio { get; set; }
+
+        [ForeignKey("id_ruta")]
+        public virtual Ruta Rutas { get; set; }
     }
 }

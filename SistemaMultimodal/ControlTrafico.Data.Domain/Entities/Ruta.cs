@@ -10,7 +10,7 @@ namespace ControlTrafico.Data.Domain.Entities
     [Table("RUTAS")]
     public class Ruta : Entity<long>
     {
-        public long id_ruta { get; set; }
+        //public long id_ruta { get; set; }
         public string nombre_ruta { get; set; }
         public System.TimeSpan hora_inicio { get; set; }
         public System.TimeSpan hora_fin { get; set; }

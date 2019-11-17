@@ -10,7 +10,7 @@ namespace ControlTrafico.ExternalServices.Core
 {
     public class Servicio<T>
     {
-        public async Task<T> MapearServicio(ServicioRest infoService)
+        public async Task<T> MapearServicioGet(ServicioRest infoService)
         {
             T entity;
             string content = await GetInfoServicio(infoService);

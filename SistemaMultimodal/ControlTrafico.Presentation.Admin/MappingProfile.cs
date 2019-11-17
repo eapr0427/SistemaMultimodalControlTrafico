@@ -14,6 +14,8 @@ namespace ControlTrafico.Presentation.Admin
         {
             CreateMap<Estacion, EstacionesResponseDTO>();
             CreateMap<FlujoDto, Flujo>();
+            CreateMap<RutaDisponibleDTO, RutasDisponibles>();
+            CreateMap<RutasDisponibles, RutaDisponibleDTO>();
             CreateMap<Flujo, FlujoDto>();
         }
     }

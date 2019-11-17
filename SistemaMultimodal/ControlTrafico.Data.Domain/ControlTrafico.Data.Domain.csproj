@@ -55,9 +55,11 @@
     <Compile Include="Entities\Flujo.cs" />
     <Compile Include="Entities\Prueba.cs" />
     <Compile Include="Entities\Ruta.cs" />
+    <Compile Include="Entities\RutasDisponibles.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\IEstacionRepository.cs" />
     <Compile Include="Repositories\IFlujoRepository.cs" />
+    <Compile Include="Repositories\IRutasRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ControlTrafico.Data\ControlTrafico.Data.csproj">
