@@ -12,7 +12,7 @@ using ControlTrafico.Presentation.Admin.Data;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using ControlTrafico.ExternalServices.Services;
+//using ControlTrafico.ExternalServices.Services;
 using AutoMapper;
 using ControlTrafico.Data.EF.Core.Repositories.Implementations;
 using ControlTrafico.Data.Domain.Repositories;
@@ -21,7 +21,7 @@ using ControlTrafico.Application.Services.Contracts;
 using ControlTrafico.Application.Services;
 using Microsoft.OpenApi.Models;
 using Swashbuckle.AspNetCore.Swagger;
-
+using ControlTrafico.Application.Services.APIServices;
 
 namespace ControlTrafico.Presentation.Admin
 {
@@ -118,10 +118,11 @@ namespace ControlTrafico.Presentation.Admin
         }
         private void RegisterServices(IServiceCollection services)
         {
-            services.AddScoped<IApiService, ApiService>();
+            //services.AddScoped<IApiService, ApiService>();
             services.AddScoped<IEstacionService, EstacionService>();
             services.AddScoped<IFlujoService, FlujoService>();
             services.AddScoped<IRutaService, RutaService>();
+            services.AddScoped<IApiService, ApiService>();
         }
 
         private void RegisterRepositories(IServiceCollection services)

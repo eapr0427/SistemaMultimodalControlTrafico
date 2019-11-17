@@ -28,8 +28,15 @@ namespace ControlTrafico.Data.EF.Core
 
         public async Task AddAsync(TEntity item)
         {
-            await GetSet().AddAsync(item);
-            _unitOfWork.CommitChanges();
+            try
+            {
+                await GetSet().AddAsync(item);
+                _unitOfWork.CommitChanges();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
         public IEnumerable<TEntity> GetAll()

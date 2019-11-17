@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using ControlTrafico.Application.DTO;
+using ControlTrafico.Application.Services.APIServices;
 using ControlTrafico.Data.Domain.Repositories;
 using System;
 using System.Collections.Generic;
@@ -12,11 +13,16 @@ namespace ControlTrafico.Application.Services
     public class RutaService : IRutaService
     {
         private readonly IMapper _mapper;
+        private readonly IApiService _apiService;
         private readonly IRutasRepository _rutaRepository;
-        public RutaService(IRutasRepository rutaRepository, IMapper mapper)
+        private readonly IFlujoRepository _flujoRpository;
+
+        public RutaService(IRutasRepository rutaRepository, IFlujoRepository flujoRpository, IMapper mapper, IApiService apiService)
         {
             _rutaRepository = rutaRepository;
+            this._flujoRpository = flujoRpository;
             _mapper = mapper;
+            this._apiService = apiService;
         }
         public async Task<IEnumerable<RutaDisponibleDTO>> GetRutasDisponibles()
         {
@@ -29,10 +35,10 @@ namespace ControlTrafico.Application.Services
                     var rutaDisponibleDTO = _mapper.Map<RutaDisponibleDTO>(rutas);
                     rutaDisponiblesDtos.Add(rutaDisponibleDTO);
                     //TODO CONSUMIR SERVICIO MARIO E INSERTAR EN FLUJO, LA RUTA QUE MARIO ME ENVÍE
+                    var vehiculoDisponible = _apiService.GetVehiculoDisponiblesync(rutaDisponibleDTO.IdZona, rutaDisponibleDTO.IdTipoVehiculo);
 
-
-                    //TODO INSERTAR TABLA FLUJO
-
+                    //Insertamos Flujo
+                    await _flujoRpository.AddAsync(new Data.Domain.Entities.Flujo {fecha_hora_envio = DateTime.Now, id_ruta = rutas.Id, IdVehiculo = vehiculoDisponible.Result.Id });
 
                 }
                 return rutaDisponiblesDtos;
