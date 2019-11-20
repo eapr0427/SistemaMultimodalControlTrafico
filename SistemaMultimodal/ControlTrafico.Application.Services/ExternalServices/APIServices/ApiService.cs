@@ -23,7 +23,7 @@ namespace ControlTrafico.Application.Services.APIServices
                 Controller = "/station/"
             };
 
-            var respuesta = await instancia.MapearServicioGet(payload);
+            var respuesta = await instancia.MapearServicio(payload);
 
             return new ResponseDto<EstacionesRootResponseDto>
             {
@@ -33,8 +33,18 @@ namespace ControlTrafico.Application.Services.APIServices
 
         }
 
-        public ResponseDto<VehiculoDto> GetVehiculoDisponiblesync(int idZona, int idTipoVehiculo)
+        public  ResponseDto<VehiculoDto> GetVehiculoDisponibleAsync(int idZona, int idTipoVehiculo)
         {
+            var instancia = new Servicio<VehiculoDto>();
+            ServicioRest payload = new ServicioRest
+            {
+                UrlBase = BaseUrl,
+                ServicePrefix = "infraestructura/api",
+                Controller = "/station/"
+            };
+
+            //var respuesta = await instancia.MapearServicio(payload,);
+
             //TODO Armar API DE CONSUMO
             return new ResponseDto<VehiculoDto>
             {

@@ -12,10 +12,10 @@ namespace ControlTrafico.Data.Domain.Entities
     {
         public long id_ruta { get; set; }
         public System.DateTime fecha_hora_envio { get; set; }
-
+        [Column("estado")]
+        public int Estado { get; set; }
         [Column("id_vehiculo")]
         public string IdVehiculo { get; set; }
-
         [ForeignKey("id_ruta")]
         public virtual Ruta Rutas { get; set; }
     }

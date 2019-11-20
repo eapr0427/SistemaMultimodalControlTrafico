@@ -5,20 +5,21 @@ using System.Collections.Generic;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
+using Newtonsoft;
 
 namespace ControlTrafico.Application.Services.Core
 {
     public class Servicio<T>
     {
-        public async Task<T> MapearServicioGet(ServicioRest infoService)
+        public async Task<T> MapearServicio(ServicioRest infoService, string payload = null)
         {
             T entity;
-            string content = await GetInfoServicio(infoService);
+            string content = await GetInfoServicio(infoService, payload);
             entity = JsonConvert.DeserializeObject<T>(content);
             return entity;
         }
 
-        private async Task<string> GetInfoServicio(ServicioRest infoService)
+        private async Task<string> GetInfoServicio(ServicioRest infoService, string payload = null)
         {
             try
             {
@@ -33,7 +34,16 @@ namespace ControlTrafico.Application.Services.Core
                 var url = $"{infoService.ServicePrefix}{infoService.Controller}";
                 try
                 {
-                    var response = await client.GetAsync(url);
+                    HttpResponseMessage response = null;
+                    if (payload == null)
+                    {
+                        response = await client.GetAsync(url);
+                    }
+                    else
+                    {
+                        response = await client.PostAsync(url, new StringContent(payload));
+                    }
+                    
                     if (response.IsSuccessStatusCode)
                     {
                         stringresponse = await response.Content.ReadAsStringAsync();

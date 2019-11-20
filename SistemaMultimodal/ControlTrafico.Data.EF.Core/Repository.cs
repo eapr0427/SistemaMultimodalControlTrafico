@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Threading.Tasks;
 
 namespace ControlTrafico.Data.EF.Core
@@ -59,6 +60,27 @@ namespace ControlTrafico.Data.EF.Core
         private DbSet<TEntity> GetSet()
         {
             return _unitOfWork.CreateSet<TEntity>();
+        }
+
+        public async Task<TEntity> UpdateAsync(TEntity t, object key)
+        {
+            if (t == null)
+                return null;
+            TEntity exist = await GetSet().FindAsync(key);
+            if (exist != null)
+            {
+                GetSet().Attach(exist).CurrentValues.SetValues(t);
+                _unitOfWork.CommitChanges();
+            }
+            return exist;
+        }
+        public TEntity Get(TEntityId id)
+        {
+            return !id.Equals(default(TEntityId)) ? GetSet().Find(id) : null;
+        }
+        public async Task<ICollection<TEntity>> FindAllAsync(Expression<Func<TEntity, bool>> match)
+        {
+            return await GetSet().Where(match).ToListAsync();
         }
     }
 }

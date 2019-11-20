@@ -35,10 +35,21 @@ namespace ControlTrafico.Application.Services
                     var rutaDisponibleDTO = _mapper.Map<RutaDisponibleDTO>(rutas);
                     rutaDisponiblesDtos.Add(rutaDisponibleDTO);
                     //TODO CONSUMIR SERVICIO MARIO E INSERTAR EN FLUJO, LA RUTA QUE MARIO ME ENVÍE
-                    var vehiculoDisponible = _apiService.GetVehiculoDisponiblesync(rutaDisponibleDTO.IdZona, rutaDisponibleDTO.IdTipoVehiculo);
+                    var vehiculoDisponible = _apiService.GetVehiculoDisponibleAsync(rutaDisponibleDTO.IdZona, rutaDisponibleDTO.IdTipoVehiculo);
 
+                    //
+                    DateTimeOffset localtime = new DateTimeOffset(DateTime.Now, new TimeSpan(-5, 0, 0));
+
+                    //TimeZoneInfo.ConvertTime(DateTime.Now, timeZone)
                     //Insertamos Flujo
-                    await _flujoRpository.AddAsync(new Data.Domain.Entities.Flujo {fecha_hora_envio = DateTime.Now, id_ruta = rutas.Id, IdVehiculo = vehiculoDisponible.Result.Id });
+                    var flujos = await _flujoRpository.FindAllAsync(mm => mm.id_ruta == rutas.Id);
+
+                    foreach (var flujobd in flujos)
+                    {
+                        flujobd.Estado = 0;
+                        await _flujoRpository.UpdateAsync(flujobd,flujobd.Id);
+                    }
+                    await _flujoRpository.AddAsync(new Data.Domain.Entities.Flujo {fecha_hora_envio = localtime.DateTime, id_ruta = rutas.Id, IdVehiculo = vehiculoDisponible.Result.Id, Estado = 1 });
 
                 }
                 return rutaDisponiblesDtos;

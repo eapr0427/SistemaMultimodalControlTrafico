@@ -28,7 +28,7 @@ namespace ControlTrafico.Data.UnitTests
 
 
             //Assert
-            Assert.Pass();
+            Assert.IsNotNull(flujorepository);
         }
     }
 }

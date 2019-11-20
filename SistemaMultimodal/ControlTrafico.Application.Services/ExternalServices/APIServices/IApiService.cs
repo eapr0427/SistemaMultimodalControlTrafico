@@ -10,6 +10,6 @@ namespace ControlTrafico.Application.Services.APIServices
     public interface IApiService
     {
         Task<ResponseDto<EstacionesRootResponseDto>> GetEstacionesAsync();
-        ResponseDto<VehiculoDto> GetVehiculoDisponiblesync(int idZona, int idTipoVehiculo);
+        ResponseDto<VehiculoDto> GetVehiculoDisponibleAsync(int idZona, int idTipoVehiculo);
     }
 }
