@@ -36,9 +36,12 @@ namespace ControlTrafico.Application.Services
                     rutaDisponiblesDtos.Add(rutaDisponibleDTO);
                     //TODO CONSUMIR SERVICIO MARIO E INSERTAR EN FLUJO, LA RUTA QUE MARIO ME ENVÍE
                     var vehiculoDisponible = _apiService.GetVehiculoDisponibleAsync(rutaDisponibleDTO.IdZona, rutaDisponibleDTO.IdTipoVehiculo);
+                    var fechaActual = DateTime.Now;
+
+                    fechaActual = DateTime.SpecifyKind(fechaActual, DateTimeKind.Unspecified);
 
                     //
-                    DateTimeOffset localtime = new DateTimeOffset(DateTime.Now, new TimeSpan(-5, 0, 0));
+                    DateTimeOffset localtime = new DateTimeOffset(fechaActual, new TimeSpan(-5, 0, 0));
 
                     //TimeZoneInfo.ConvertTime(DateTime.Now, timeZone)
                     //Insertamos Flujo

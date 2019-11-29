@@ -38,6 +38,11 @@ namespace ControlTrafico.Presentation.Admin
         public void ConfigureServices(IServiceCollection services)
         {
             InitDbContext(services);
+
+            services.AddCors(mm =>
+            {
+                mm.AddPolicy("AllowOrigin", options => options.AllowAnyOrigin());
+            });
             //services.AddDbContext<ApplicationDbContext>(options =>
             //    options.UseSqlServer(
             //        Configuration.GetConnectionString("SistemaMultimodalDB")));
@@ -78,6 +83,8 @@ namespace ControlTrafico.Presentation.Admin
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+            app.UseOptions();
+            app.UseCors(options => options.AllowAnyOrigin());
             // Enable middleware to serve generated Swagger as a JSON endpoint.
             app.UseSwagger();
 
@@ -115,6 +122,8 @@ namespace ControlTrafico.Presentation.Admin
                     pattern: "{controller=Home}/{action=Index}/{id?}");
                 endpoints.MapRazorPages();
             });
+
+        
         }
         private void RegisterServices(IServiceCollection services)
         {

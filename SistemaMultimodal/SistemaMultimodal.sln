@@ -31,7 +31,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "05-Presentation", "05-Prese
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ControlTrafico.Presentation.Admin", "ControlTrafico.Presentation.Admin\ControlTrafico.Presentation.Admin.csproj", "{E2CB7F34-7445-46CC-9456-94FE4F58501C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ControlTrafico.Data.UnitTests", "ControlTrafico.Data.UnitTests\ControlTrafico.Data.UnitTests.csproj", "{50CDA3EB-DED7-435E-A5A4-0B9BA156F98B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ControlTrafico.Data.UnitTests", "ControlTrafico.Data.UnitTests\ControlTrafico.Data.UnitTests.csproj", "{50CDA3EB-DED7-435E-A5A4-0B9BA156F98B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ControlTrafico.Application.Services.UnitTest", "ControlTrafico.Application.Services.UnitTest\ControlTrafico.Application.Services.UnitTest.csproj", "{DE93AF5B-EF18-4D8D-86BF-4A6485F17ED3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -79,6 +81,10 @@ Global
 		{50CDA3EB-DED7-435E-A5A4-0B9BA156F98B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{50CDA3EB-DED7-435E-A5A4-0B9BA156F98B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{50CDA3EB-DED7-435E-A5A4-0B9BA156F98B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DE93AF5B-EF18-4D8D-86BF-4A6485F17ED3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DE93AF5B-EF18-4D8D-86BF-4A6485F17ED3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DE93AF5B-EF18-4D8D-86BF-4A6485F17ED3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DE93AF5B-EF18-4D8D-86BF-4A6485F17ED3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -94,6 +100,7 @@ Global
 		{098B26E1-636E-498A-89E2-B1B062ED693E} = {C5DAEE91-8294-44E8-9102-B877AC88C59B}
 		{E2CB7F34-7445-46CC-9456-94FE4F58501C} = {343C3737-0BD1-4A2E-AE8F-8388003ABA3A}
 		{50CDA3EB-DED7-435E-A5A4-0B9BA156F98B} = {34A056BC-0BF3-41B9-908A-5FBC0295D024}
+		{DE93AF5B-EF18-4D8D-86BF-4A6485F17ED3} = {DB90FF17-45A4-4579-A3AB-DE10671EF64D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2BE50D5C-82AE-4981-9CDE-9018DB6D437A}
